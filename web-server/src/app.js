@@ -4,22 +4,29 @@ const app = express();
 
 
 app.get('', (req, res) => {
-    res.send('Hello express');
+    res.send('<h1>My name is Ashton. I work at Google</h1>');
 })
 
 //help route
 app.get('/help', ( req, res ) => {
-    res.send('Welcome to the help desk');
+    res.send({
+        name: 'Ashton',
+        company: 'Google',
+        age: '32'
+    });
 })
 
 //about
 app.get('/about', ( req, res ) => {
-    res.send('So you want to know more about us');
+    res.send('<h1 style="color:red;">So you want to know more about us</h1>');
 })
 
 //weather
 app.get('/weather', ( req, res ) => {
-    res.send('Let\'s get the latest weather updates');
+    res.send({
+        forecast: 'Sunny',
+        location: 'Durban'
+    });
 })
 
 
