@@ -50,7 +50,7 @@ app.get('/weather', ( req, res ) => {
 
 app.get('/help/*', ( req, res ) => {
     res.render('error', {
-        title: 'Help error',
+        title: 'Help Page Error',
         error: 'Help article not found',
         name: 'Ashton Naidoo'
     })
