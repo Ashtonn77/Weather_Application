@@ -48,6 +48,21 @@ app.get('/weather', ( req, res ) => {
     });
 })
 
+app.get('/help/*', ( req, res ) => {
+    res.render('error', {
+        title: 'Help error',
+        error: 'Help article not found',
+        name: 'Ashton Naidoo'
+    })
+})
+
+app.get('*', ( req, res ) => {
+        res.render('error', {
+            title: '404 error',
+            error: 'Page not found :(',
+            name: 'Ashton Naidoo'
+        })
+})
 
 app.listen(3000, () => {
     console.log('server is running on 3000');
