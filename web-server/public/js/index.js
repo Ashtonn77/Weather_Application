@@ -1,19 +1,23 @@
-console.log('JS file has been loaded')
-
-fetch('/weather?address=Durban').then((response) => {
-    response.json().then((data) => {
-        if(data.error){
-            console.log(data.error)
-        }else{
-            console.log(data.location)
-            console.log(data.forecast)
-        }
-        
-    })
-})
-
 const weatherForm = document.querySelector('form');
+const search = document.querySelector('input');
+const firstText = document.querySelector('#text-one');
+const secondText = document.querySelector('#text-two');
+
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('take one')
+    const location = search.value;
+    firstText.textContent = 'loading..'
+    secondText.textContent = '';
+    
+    fetch('/weather?address=' + location).then((response) => {
+        response.json().then((data) => {
+            if(data.error){
+                firstText.textContent = data.error;
+            }else{
+                firstText.textContent = data.location;
+                secondText.textContent = data.forecast;
+            }
+            
+        })
+    })
 })
