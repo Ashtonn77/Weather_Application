@@ -40,3 +40,22 @@ header a{
 .myPicture{
     width: 260px;
 }
+
+input{
+    border: 1px solid #bdb5b5;
+    padding: 6px;
+    font-size: 15px;
+    border-radius: 10px;
+    outline: none;
+}
+
+button{
+    cursor: pointer;
+    border: 1px solid #bdb5b5;
+    background: #333333;
+    color: white;
+    padding: 6px;
+    font-size: 15px;
+    border-radius: 10px;
+    outline: none;
+}
