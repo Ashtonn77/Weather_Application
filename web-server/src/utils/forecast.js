@@ -12,7 +12,7 @@ const forecast = (latitude, longitude, callback) => {
         }        
         else{
             const data = body.current;            
-            const completeData = `${data.weather_descriptions[0]}. It is currently ${data.temperature} degrees out but it feels like ${data.feelslike} degrees out.\n Humidity is at ${data.humidity} with a ` + (parseFloat(data.precip) * 100) + '% chance of percipitation and rainfall';
+            const completeData = `${data.weather_descriptions[0]}. It is currently ${data.temperature} degrees out but it feels like ${data.feelslike} degrees out. Humidity is at ${data.humidity} with a ` + (parseFloat(data.precip) * 100) + '% chance of percipitation and rainfall.';
             callback(undefined, completeData);    
           
         }
